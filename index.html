@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArqComp | Caça-Palavras</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="topo">
+        <div class="container topo-conteudo">
+            <div class="marca"><span class="icone-marca">A</span> ARQCOMP</div>
+            <span class="topo-legenda">ARQUITETURA COMPUTACIONAL · SPRINT 3</span>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="apresentacao">
+            <span class="etiqueta">DESAFIO INTERATIVO</span>
+            <h1>Caça-Palavras <span>Computacional</span></h1>
+            <p>Leia as dicas, descubra os termos de Arquitetura Computacional e encontre cada um no tabuleiro.</p>
+        </section>
+
+        <section class="jogo">
+            <div class="painel painel-tabuleiro">
+                <div class="painel-cabecalho">
+                    <div>
+                        <h2>Descubra os conceitos</h2>
+                        <p>Segure o clique e arraste em linha reta pelas letras. Reiniciar sorteia novas posições.</p>
+                    </div>
+                    <span class="indicador">12 TERMOS</span>
+                </div>
+
+                <div class="area-tabuleiro">
+                    <div id="tabuleiro" class="tabuleiro" aria-label="Tabuleiro de caça-palavras"></div>
+                </div>
+
+                <p id="mensagem" class="mensagem" role="status" aria-live="polite">Selecione uma palavra para começar!</p>
+
+                <div class="acoes">
+                    <button class="botao botao-principal" type="button" onclick="conferir()">Conferir</button>
+                    <button class="botao botao-secundario" type="button" onclick="reiniciar()">Reiniciar</button>
+                </div>
+            </div>
+
+            <aside class="lateral">
+                <div class="painel painel-progresso">
+                    <span class="subtitulo">SEU PROGRESSO</span>
+                    <div class="contagem"><strong id="acertos">0</strong><span> / 12 palavras</span></div>
+                    <div class="barra"><div id="barra-progresso" class="barra-preenchida"></div></div>
+                    <p id="texto-progresso">Encontre a primeira palavra!</p>
+                </div>
+
+                <div class="painel painel-palavras">
+                    <div class="titulo-lista">
+                        <h2>Dicas para encontrar</h2>
+                        <span class="legenda-ponto"><span class="ponto-verde"></span> Encontrado</span>
+                    </div>
+                    <div id="lista-palavras" class="lista-palavras"></div>
+                </div>
+
+                <div class="painel painel-instrucoes">
+                    <h2>Como jogar</h2>
+                    <p><span class="numero">1</span> Leia uma dica e descubra qual termo procurar.</p>
+                    <p><span class="numero">2</span> Encontre o termo no tabuleiro e arraste da primeira à última letra.</p>
+                    <p><span class="numero">3</span> Solte o mouse para verificar a resposta.</p>
+                    <div class="dica">As respostas só aparecem ao lado das dicas quando você encontra as palavras. Elas podem estar na horizontal ou na vertical, nos dois sentidos. Reiniciar cria um tabuleiro diferente.</div>
+                </div>
+            </aside>
+        </section>
+    </main>
+
+    <footer class="rodape">Projeto de Arquitetura Computacional · HTML, CSS e JavaScript</footer>
+    <script src="script.js"></script>
+</body>
+</html>

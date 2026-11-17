@@ -1,75 +1,70 @@
-# Cruzadinha de Arquitetura Computacional
+# ArqComp — Caça-Palavras Computacional
 
-## Sobre o projeto
+Jogo de caça-palavras sobre conceitos de **Arquitetura Computacional**, desenvolvido com **HTML, CSS e JavaScript puros** para a Sprint 3.
 
-Este repositório será utilizado para desenvolver uma **cruzadinha interativa sobre Arquitetura Computacional**, proposta na Atividade Avaliativa III da disciplina de Arquitetura Computacional (Sprint 3).
-
-O objetivo é criar um jogo que funcione diretamente no navegador, no qual o jogador utiliza pistas para descobrir conceitos estudados em aula. Além de revisar o conteúdo, o projeto servirá para praticar **HTML, CSS, JavaScript, Git e GitHub Pages**.
-
-## O que será desenvolvido
-
-O jogo terá:
-
-- Um tabuleiro com **no mínimo 12 das 16 palavras** propostas na atividade, todas cruzando com pelo menos outra palavra.
-- Pistas numeradas e organizadas em **Horizontais** e **Verticais**.
-- Casas nas quais o jogador poderá **digitar as letras diretamente**.
-- Um botão **Conferir** para indicar quais palavras estão certas ou erradas.
-- Um **contador de acertos**, mostrando quantas palavras foram respondidas corretamente.
-- Um botão **Reiniciar** para limpar as respostas e começar novamente.
-
-As pistas serão escritas com palavras próprias, terão **até 15 palavras cada** e não poderão revelar a resposta nem sua sigla por extenso.
-
-## Conteúdos da cruzadinha
-
-A atividade apresenta 16 termos possíveis: **CPU, ULA, UC, registradores, RAM, ROM, EEPROM, Flash, cache, memória de massa, DMA, address bus, data bus, microcontrolador, dual core e quad core**.
-
-Durante o desenvolvimento, serão escolhidos pelo menos 12 desses termos para compor o tabuleiro. A lista definitiva de palavras e suas respectivas pistas será adicionada a este README quando o jogo estiver montado.
+> **Observação:** o enunciado original da atividade solicita uma *cruzadinha*, com pistas e palavras digitadas nas casas. Esta implementação é um **caça-palavras**, conforme a escolha de desenvolvimento, e não atende integralmente ao formato solicitado no PDF.
 
 ## Como jogar
 
-1. Leia as pistas horizontais e verticais.
-2. Descubra a palavra correspondente a cada pista.
-3. Digite as letras diretamente nas casas do tabuleiro.
-4. Clique em **Conferir** para verificar as respostas e acompanhar o total de acertos.
-5. Utilize **Reiniciar** caso queira tentar novamente.
+1. Leia as 12 dicas e descubra quais termos devem ser encontrados.
+2. Segure o botão esquerdo do mouse sobre a primeira letra de uma palavra.
+3. Arraste na horizontal ou vertical, até a última letra, e solte o mouse.
+4. Quando acertar, as casas ficam verdes, a resposta é revelada ao lado da dica e o contador aumenta.
+5. Use **Conferir** para consultar seu progresso ou **Reiniciar** para começar com as palavras em **novas posições**.
 
-## Tecnologias
+É possível selecionar as palavras em qualquer um dos dois sentidos (da esquerda para a direita ou vice-versa; de cima para baixo ou vice-versa). Palavras já encontradas não somam novos acertos.
 
-- **HTML:** estrutura da página e do tabuleiro.
-- **CSS:** aparência do jogo e sinalização visual das respostas.
-- **JavaScript:** preenchimento das casas, conferência das palavras, contador e reinício.
-- **Git e GitHub:** versionamento do projeto.
-- **GitHub Pages:** publicação do jogo como site estático.
+## Palavras do desafio e dicas
 
-## Estrutura prevista
+| Resposta | Dica exibida no jogo |
+|---|---|
+| CPU | Componente principal responsável por interpretar e executar instruções do computador. |
+| ULA | Parte do processador que realiza cálculos matemáticos e comparações lógicas. |
+| UC | Coordena a execução das instruções e envia sinais aos outros componentes do processador. |
+| RAM | Mantém informações usadas em tarefas atuais, mas perde tudo quando falta energia. |
+| ROM | Guarda instruções essenciais à inicialização e normalmente funciona apenas para leitura. |
+| EEPROM | Permite apagar e regravar dados eletricamente, sem retirar o componente do circuito. |
+| FLASH | Tecnologia de memória presente em pen drives e unidades SSD. |
+| CACHE | Guarda cópias de dados frequentemente acessados para acelerar o processamento. |
+| DMA | Permite transferir informações entre periféricos e memória com pouca intervenção do processador. |
+| DATABUS | Caminho eletrônico por onde circulam informações entre componentes do computador. |
+| DUALCORE | Processador que possui dois núcleos de execução. |
+| QUADCORE | Processador que possui quatro núcleos de execução. |
+
+## Tecnologias utilizadas
+
+- **HTML:** elementos do site, botões e áreas do tabuleiro.
+- **CSS:** cores, disposição das casas e estilos das respostas.
+- **JavaScript:** vetores, objetos, `for`, `if/else`, funções e eventos do mouse.
+
+O tabuleiro tem **13 linhas e 13 colunas** e é **sorteado novamente a cada partida**. As 12 palavras são posicionadas aleatoriamente na horizontal ou vertical, sem conflito de letras; os espaços restantes recebem letras aleatórias. O jogo utiliza apenas arrays, objetos, laços `for`, condicionais e `Math.random()`, sem bibliotecas externas.
+
+## Arquivos
 
 ```text
 Atividade-de-arcomp/
-├── index.html
-├── style.css
-├── script.js
-└── README.md
+├── index.html    # Estrutura da página
+├── style.css     # Visual do jogo
+├── script.js     # Tabuleiro e regras
+└── README.md     # Documentação
 ```
 
-## Etapas do desenvolvimento
+## Como executar
 
-- [x] Criar o repositório e preparar a documentação inicial.
-- [ ] Selecionar as palavras e elaborar suas pistas.
-- [ ] Planejar a disposição das palavras cruzadas no tabuleiro.
-- [ ] Construir a estrutura do jogo em HTML.
-- [ ] Estilizar a interface com CSS.
-- [ ] Implementar as interações e verificações em JavaScript.
-- [ ] Testar o funcionamento do jogo.
-- [ ] Atualizar o README com as palavras, pistas e instruções finais.
-- [ ] Publicar o site pelo GitHub Pages e verificar o acesso.
+Abra o arquivo `index.html` em um navegador no computador. Nenhuma instalação é necessária.
 
-O desenvolvimento será registrado em **pelo menos 6 commits distribuídos por 2 dias diferentes**, com mensagens como `feat:`, `fix:`, `style:` e `docs:`, conforme o enunciado.
+## Situação do projeto
 
-## Acesso ao jogo
+- [x] Definir as 12 palavras e suas posições.
+- [x] Criar o layout HTML.
+- [x] Aplicar o estilo CSS.
+- [x] Programar a seleção com o mouse, a conferência e o reinício.
+- [x] Substituir a lista de respostas por dicas e revelar cada termo após o acerto.
+- [x] Gerar novas posições e letras para o tabuleiro ao reiniciar.
+- [ ] Publicar no GitHub Pages e testar o endereço público.
 
-**Em desenvolvimento.** O link do GitHub Pages será disponibilizado aqui após a publicação e os testes.
+A atividade original solicita **no mínimo 6 commits em pelo menos 2 dias diferentes**. O histórico do repositório deve ser acompanhado para cumprir essa regra.
 
----
+## Site publicado
 
-**Disciplina:** Arquitetura Computacional — Sprint 3  
-**Atividade:** Avaliativa III — Game: Cruzadinha de Arquitetura Computacional
+Ainda não publicado. Após ativar o GitHub Pages, o link poderá ser adicionado aqui.
