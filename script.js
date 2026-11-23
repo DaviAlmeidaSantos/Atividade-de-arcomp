@@ -1,10 +1,12 @@
-// Cada palavra cabe em uma linha ou coluna da grade de 16x16.
+// A cada rodada, 12 dos 16 termos são sorteados na grade de 16x16.
 // MICROCONTROLADOR tem 16 letras, por isso uma grade de 14x14 não seria suficiente.
 const tamanho = 16;
 const alfabeto = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 let tabuleiro = [];
 let marcadas = [];
 let ordemDicas = [];
+let selecionadas = [];
+const palavrasPorPartida = 12;
 let acertos = 0;
 let selecionando = false;
 let ponteiroAtivo = null;
@@ -138,7 +140,7 @@ function limparGrade() {
 function tentarGerar() {
     limparGrade();
     let ordem = [];
-    for (let i = 0; i < palavras.length; i++) ordem.push(i);
+    for (let i = 0; i < selecionadas.length; i++) ordem.push(selecionadas[i]);
     // Maior comprimento primeiro; embaralha o desempate.
     misturar(ordem);
     ordem.sort(function(a, b) {
@@ -188,8 +190,9 @@ function tentarGerar() {
 
 function gerarTabuleiro() {
     let anteriores = [];
-    for (let i = 0; i < palavras.length; i++) {
-        anteriores.push(palavras[i].linha + "-" + palavras[i].coluna + "-" + palavras[i].vertical);
+    for (let i = 0; i < selecionadas.length; i++) {
+        let palavra = palavras[selecionadas[i]];
+        anteriores.push(palavra.linha + "-" + palavra.coluna + "-" + palavra.vertical);
     }
 
     let gerou = false;
@@ -197,8 +200,9 @@ function gerarTabuleiro() {
     for (let tentativa = 0; tentativa < 100 && !gerou; tentativa++) {
         if (!tentarGerar()) continue;
         gerou = true;
-        for (let i = 0; i < palavras.length; i++) {
-            let atual = palavras[i].linha + "-" + palavras[i].coluna + "-" + palavras[i].vertical;
+        for (let i = 0; i < selecionadas.length; i++) {
+            let palavra = palavras[selecionadas[i]];
+            let atual = palavra.linha + "-" + palavra.coluna + "-" + palavra.vertical;
             if (anteriores[i] === atual) gerou = false;
         }
     }
@@ -217,9 +221,10 @@ function gerarTabuleiro() {
 
 function sortearDicas() {
     ordemDicas = [];
-    for (let i = 0; i < palavras.length; i++) {
-        palavras[i].dica = palavras[i].dicas[numeroAleatorio(palavras[i].dicas.length)];
-        ordemDicas.push(i);
+    for (let i = 0; i < selecionadas.length; i++) {
+        let indice = selecionadas[i];
+        palavras[indice].dica = palavras[indice].dicas[numeroAleatorio(palavras[indice].dicas.length)];
+        ordemDicas.push(indice);
     }
     misturar(ordemDicas);
 }
@@ -309,7 +314,8 @@ function finalizarSelecao(linha, coluna) {
         return;
     }
 
-    for (let i = 0; i < palavras.length; i++) {
+    for (let j = 0; j < selecionadas.length; j++) {
+        let i = selecionadas[j];
         let palavra = palavras[i];
         if (!selecaoCorresponde(palavra, linha, coluna)) continue;
         if (palavra.encontrada) {
@@ -329,9 +335,8 @@ function finalizarSelecao(linha, coluna) {
         resposta.innerText = palavra.texto;
         resposta.style.backgroundColor = cores[i][1];
         resposta.style.color = cores[i][0];
-        atualizarProgresso();
-        document.getElementById("mensagem").innerText = acertos === palavras.length
-            ? "Parabéns! Você encontrou todos os 16 termos!"
+        document.getElementById("mensagem").innerText = acertos === selecionadas.length
+            ? "Parabéns! Você encontrou todos os termos desta partida!"
             : "Correto! Você encontrou " + palavra.texto + ".";
         return;
     }
@@ -364,31 +369,25 @@ function pintarPalavra(indice) {
     }
 }
 
-function atualizarProgresso() {
-    document.getElementById("acertos").innerText = acertos;
-    document.getElementById("barra-progresso").style.width = (acertos / palavras.length * 100) + "%";
-    document.getElementById("texto-progresso").innerText = acertos === palavras.length
-        ? "Desafio concluído!"
-        : acertos + " de " + palavras.length + " palavras encontradas.";
-}
-
-function conferir() {
-    document.getElementById("mensagem").innerText = acertos === palavras.length
-        ? "Parabéns! Você completou o caça-palavras!"
-        : "Você encontrou " + acertos + " de " + palavras.length + " palavras. Continue procurando!";
-}
-
 function reiniciar() {
     selecionando = false;
     ponteiroAtivo = null;
     acertos = 0;
-    for (let i = 0; i < palavras.length; i++) palavras[i].encontrada = false;
+
+    // Mistura os 16 termos e escolhe apenas 12 para esta rodada.
+    let indices = [];
+    for (let i = 0; i < palavras.length; i++) {
+        palavras[i].encontrada = false;
+        indices.push(i);
+    }
+    misturar(indices);
+    selecionadas = indices.slice(0, palavrasPorPartida);
+
     gerarTabuleiro();
     sortearDicas();
     montarTabuleiro();
     montarLista();
-    atualizarProgresso();
-    document.getElementById("mensagem").innerText = "Novo tabuleiro e novas dicas sorteados. Boa sorte!";
+    document.getElementById("mensagem").innerText = "Nova partida sorteada! Encontre os termos pelas dicas.";
 }
 
 document.onpointermove = function(evento) {

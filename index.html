@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ArqComp | Caça-Palavras</title>
-    <link rel="stylesheet" href="style.css?v=3">
+    <link rel="stylesheet" href="style.css?v=5">
 </head>
 <body class="etapa-estudo">
     <header class="topo">
@@ -66,7 +66,7 @@
                     </section>
                 </div>
                 <div class="inicio-estudo">
-                    <p><strong>Preparado para praticar?</strong> O caça-palavras vai apresentar dicas sobre os conceitos que você acabou de estudar.</p>
+                    <p><strong>Preparado para praticar?</strong> O caça-palavras sorteia 12 dos 16 conceitos que você acabou de estudar.</p>
                     <button type="button" class="botao botao-principal" onclick="iniciarJogo()">Começar caça-palavras</button>
                 </div>
             </div>
@@ -77,32 +77,24 @@
                 <div class="painel-cabecalho">
                     <div>
                         <h2>Descubra os conceitos</h2>
-                        <p>Arraste pelas letras na horizontal ou vertical. Reiniciar muda posições e dicas.</p>
+                        <p>Arraste pelas letras na horizontal ou vertical. Reiniciar sorteia novas palavras, posições e dicas.</p>
                     </div>
-                    <span class="indicador">16 TERMOS</span>
+                    <span class="indicador">12 TERMOS</span>
                 </div>
 
                 <div class="area-tabuleiro">
                     <div id="tabuleiro" class="tabuleiro" aria-label="Tabuleiro de caça-palavras"></div>
                 </div>
 
-                <p id="mensagem" class="mensagem" role="status" aria-live="polite">Encontre os 16 conceitos escondidos no tabuleiro!</p>
+                <p id="mensagem" class="mensagem" role="status" aria-live="polite">Encontre os termos escondidos no tabuleiro!</p>
 
                 <div class="acoes">
-                    <button class="botao botao-principal" type="button" onclick="conferir()">Conferir</button>
-                    <button class="botao botao-secundario" type="button" onclick="reiniciar()">Reiniciar</button>
+                    <button class="botao botao-principal" type="button" onclick="reiniciar()">Reiniciar</button>
                     <button class="botao botao-secundario" type="button" onclick="reverComponentes()">Rever componentes</button>
                 </div>
             </div>
 
             <aside class="lateral">
-                <div class="painel painel-progresso">
-                    <span class="subtitulo">SEU PROGRESSO</span>
-                    <div class="contagem"><strong id="acertos">0</strong><span> / 16 palavras</span></div>
-                    <div class="barra"><div id="barra-progresso" class="barra-preenchida"></div></div>
-                    <p id="texto-progresso">Encontre a primeira palavra!</p>
-                </div>
-
                 <div class="painel painel-palavras">
                     <div class="titulo-lista">
                         <h2>Dicas para encontrar</h2>
@@ -116,13 +108,13 @@
                     <p><span class="numero">1</span> Leia uma dica e descubra qual termo procurar.</p>
                     <p><span class="numero">2</span> Encontre o termo no tabuleiro e arraste da primeira à última letra.</p>
                     <p><span class="numero">3</span> Solte o mouse ou o dedo para verificar a resposta.</p>
-                    <div class="dica">Cada uma das 16 respostas possui uma cor e um tipo de contorno. Em cruzamentos, as casas mostram mais de uma cor. Ao reiniciar, mudam as posições, a ordem e as dicas.</div>
+                    <div class="dica">Cada uma das 12 respostas sorteadas possui uma cor e um tipo de contorno. Em cruzamentos, as casas mostram mais de uma cor. Ao reiniciar, mudam as palavras sorteadas, as posições, a ordem e as dicas.</div>
                 </div>
             </aside>
         </section>
     </main>
 
     <footer class="rodape">Projeto de Arquitetura Computacional · HTML, CSS e JavaScript</footer>
-    <script src="script.js?v=3"></script>
+    <script src="script.js?v=5"></script>
 </body>
 </html>

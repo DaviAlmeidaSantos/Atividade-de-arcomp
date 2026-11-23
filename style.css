@@ -78,8 +78,7 @@ h1 span {
 }
 
 .apresentacao p,
-.painel-cabecalho p,
-.painel-progresso p {
+.painel-cabecalho p {
     color: #61738a;
     line-height: 1.5;
     margin: 0;
@@ -224,36 +223,6 @@ h2 {
     gap: 17px;
 }
 
-.contagem {
-    margin: 12px 0;
-    color: #6a7b8d;
-}
-
-.contagem strong {
-    font-size: 36px;
-    color: #1b4d78;
-}
-
-.barra {
-    width: 100%;
-    height: 9px;
-    background: #e5edf5;
-    border-radius: 9px;
-    overflow: hidden;
-    margin-bottom: 12px;
-}
-
-.barra-preenchida {
-    background: #2e9bce;
-    height: 100%;
-    width: 0%;
-    transition: width 0.2s;
-}
-
-.painel-progresso p {
-    font-size: 13px;
-}
-
 .legenda-ponto {
     color: #738394;
     white-space: nowrap;
@@ -382,6 +351,7 @@ h2 {
         grid-template-columns: 1fr 1fr;
     }
 
+    .painel-palavras,
     .painel-instrucoes {
         grid-column: 1 / 3;
     }
@@ -540,3 +510,46 @@ body.etapa-estudo #jogo,
 body.etapa-jogo #estudo {
     display: none !important;
 }
+
+/* Tema escuro como aparência padrão de todo o site */
+:root { color-scheme: dark; }
+body { background: #0b1422; color: #e9f0f8; }
+.topo { background: #08101c; border-bottom-color: #3d86c6; }
+.topo-legenda, .rodape, .legenda-ponto { color: #abbdd0; }
+.etiqueta, .subtitulo, .numero-dica { color: #80bdf4; }
+h1 span, .card-estudo h4 { color: #83c3fa; }
+.apresentacao p, .painel-cabecalho p,
+.introducao-estudo, .descricao-categoria,
+.painel-instrucoes p, .card-estudo p { color: #bac7d7; }
+.painel, .card-estudo {
+    background: #162438;
+    border-color: #2d425a;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, .18);
+}
+.categoria-estudo, .palavra {
+    background: #1d2e43;
+    border-color: #34495f;
+}
+.categoria-estudo h3 { color: #c1e0ff; }
+.inicio-estudo, .dica { background: #1a3551; color: #c5dbef; }
+.inicio-estudo p { color: #cee0f1; }
+.celula {
+    background: #24364d;
+    border-color: #3b5067;
+    color: #f0f6ff;
+}
+.celula.selecionada {
+    background: #2976ae;
+    border-color: #70c0f4;
+    color: #fff;
+}
+.mensagem { background: #1b344e; color: #c4daf2; }
+.indicador, .numero { background: #1d405d; color: #b8dcfa; }
+.botao-principal { background: #247bbd; color: #fff; }
+.botao-principal:hover { background: #3290d0; }
+.botao-secundario {
+    background: #2b415b;
+    border-color: #46617c;
+    color: #f0f7ff;
+}
+.botao-secundario:hover { background: #375470; }
