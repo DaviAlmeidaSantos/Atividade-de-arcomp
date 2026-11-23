@@ -533,3 +533,10 @@ h2 {
         padding: 12px;
     }
 }
+
+
+/* Apenas uma etapa fica visível por vez, inclusive antes do JavaScript iniciar. */
+body.etapa-estudo #jogo,
+body.etapa-jogo #estudo {
+    display: none !important;
+}

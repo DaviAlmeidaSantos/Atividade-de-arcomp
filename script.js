@@ -418,13 +418,18 @@ let jogoIniciado = false;
 
 // O tabuleiro só é criado quando o aluno termina a leitura inicial.
 function iniciarJogo() {
-    document.getElementById("estudo").hidden = true;
-    document.getElementById("jogo").hidden = false;
-
+    // Prepara a primeira partida antes de esconder a parte educativa.
     if (!jogoIniciado) {
         reiniciar();
         jogoIniciado = true;
     }
+
+    // Ao iniciar, esconde as explicações e mostra somente o tabuleiro.
+    document.getElementById("estudo").hidden = true;
+    document.getElementById("jogo").hidden = false;
+    document.body.classList.remove("etapa-estudo");
+    document.body.classList.add("etapa-jogo");
+
     document.getElementById("jogo").scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
@@ -435,5 +440,7 @@ function reverComponentes() {
     limparSelecao();
     document.getElementById("jogo").hidden = true;
     document.getElementById("estudo").hidden = false;
+    document.body.classList.remove("etapa-jogo");
+    document.body.classList.add("etapa-estudo");
     document.getElementById("estudo").scrollIntoView({ behavior: "smooth", block: "start" });
 }
