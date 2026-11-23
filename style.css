@@ -417,3 +417,119 @@ h2 {
         font-size: clamp(8px, 2.5vw, 11px);
     }
 }
+
+/* Etapa de aprendizagem, exibida antes do caça-palavras */
+[hidden] {
+    display: none !important;
+}
+
+.estudo {
+    margin-bottom: 32px;
+}
+
+.painel-estudo > h2 {
+    margin: 9px 0 12px;
+    font-size: 26px;
+}
+
+.introducao-estudo {
+    color: #61738a;
+    line-height: 1.6;
+    margin: 0;
+    max-width: 800px;
+}
+
+.categorias-estudo {
+    display: grid;
+    gap: 18px;
+    margin: 24px 0;
+}
+
+.categoria-estudo {
+    padding: 18px;
+    background: #f5f8fc;
+    border: 1px solid #e2ebf4;
+    border-radius: 10px;
+}
+
+.categoria-estudo h3 {
+    margin: 0 0 5px;
+    color: #1d557f;
+    font-size: 18px;
+}
+
+.descricao-categoria {
+    margin: 0 0 15px;
+    color: #61738a;
+    font-size: 13px;
+}
+
+.cards-estudo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 10px;
+}
+
+.card-estudo {
+    border: 1px solid #e0e8f1;
+    border-radius: 8px;
+    background: white;
+    padding: 14px;
+}
+
+.card-estudo h4 {
+    margin: 0 0 7px;
+    color: #216fb0;
+    font-size: 14px;
+}
+
+.card-estudo p {
+    margin: 0;
+    color: #52657b;
+    line-height: 1.5;
+    font-size: 13px;
+}
+
+.inicio-estudo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    padding: 18px;
+    background: #eaf4ff;
+    border-radius: 10px;
+}
+
+.inicio-estudo p {
+    margin: 0;
+    color: #305676;
+    line-height: 1.5;
+    font-size: 13px;
+}
+
+.inicio-estudo .botao {
+    flex: 0 0 auto;
+}
+
+.acoes {
+    flex-wrap: wrap;
+}
+
+.acoes .botao {
+    flex: 1 1 150px;
+}
+
+@media (max-width: 600px) {
+    .inicio-estudo {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .cards-estudo {
+        grid-template-columns: 1fr;
+    }
+
+    .categoria-estudo {
+        padding: 12px;
+    }
+}

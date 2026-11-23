@@ -414,4 +414,26 @@ document.onpointercancel = function() {
     limparSelecao();
 };
 
-reiniciar();
+let jogoIniciado = false;
+
+// O tabuleiro só é criado quando o aluno termina a leitura inicial.
+function iniciarJogo() {
+    document.getElementById("estudo").hidden = true;
+    document.getElementById("jogo").hidden = false;
+
+    if (!jogoIniciado) {
+        reiniciar();
+        jogoIniciado = true;
+    }
+    document.getElementById("jogo").scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+// Permite consultar os conceitos e depois voltar, sem perder os acertos.
+function reverComponentes() {
+    selecionando = false;
+    ponteiroAtivo = null;
+    limparSelecao();
+    document.getElementById("jogo").hidden = true;
+    document.getElementById("estudo").hidden = false;
+    document.getElementById("estudo").scrollIntoView({ behavior: "smooth", block: "start" });
+}

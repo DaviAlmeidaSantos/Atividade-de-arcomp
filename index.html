@@ -18,10 +18,61 @@
         <section class="apresentacao">
             <span class="etiqueta">DESAFIO INTERATIVO</span>
             <h1>Caça-Palavras <span>Computacional</span></h1>
-            <p>Leia as dicas, descubra os termos de Arquitetura Computacional e encontre cada um no tabuleiro.</p>
+            <p>Conheça os principais componentes, estude as explicações e depois pratique no caça-palavras.</p>
         </section>
 
-        <section class="jogo">
+
+        <section id="estudo" class="estudo" aria-labelledby="titulo-estudo">
+            <div class="painel painel-estudo">
+                <span class="etiqueta">ETAPA 1 · APRENDER</span>
+                <h2 id="titulo-estudo">Conheça os componentes</h2>
+                <p class="introducao-estudo">Antes de jogar, conheça os 16 conceitos de Arquitetura Computacional. Leia as explicações e depois tente reconhecer os termos pelas dicas, sem consultar as respostas.</p>
+                <div class="categorias-estudo">
+                    <section class="categoria-estudo">
+                        <h3>Processamento e controle</h3>
+                        <p class="descricao-categoria">Componentes que interpretam, executam e organizam operações.</p>
+                        <div class="cards-estudo">
+                            <article class="card-estudo"><h4>CPU</h4><p>É o processador central: executa instruções de programas e coordena diversas atividades do computador.</p></article>
+                            <article class="card-estudo"><h4>ULA</h4><p>É a parte do processador que realiza contas e operações lógicas, como comparações.</p></article>
+                            <article class="card-estudo"><h4>UC</h4><p>Organiza as etapas das instruções e envia sinais de controle para outras partes do processador.</p></article>
+                            <article class="card-estudo"><h4>REGISTRADORES</h4><p>São pequenas áreas de armazenamento muito rápido dentro do processador, usadas em operações imediatas.</p></article>
+                            <article class="card-estudo"><h4>MICROCONTROLADOR</h4><p>É um chip que reúne processador, memória e periféricos para controlar dispositivos, como sensores.</p></article>
+                            <article class="card-estudo"><h4>DUALCORE</h4><p>Indica um processador com dois núcleos, capazes de executar tarefas em paralelo.</p></article>
+                            <article class="card-estudo"><h4>QUADCORE</h4><p>Indica um processador com quatro núcleos, que podem trabalhar em diferentes tarefas.</p></article>
+                        </div>
+                    </section>
+
+                    <section class="categoria-estudo">
+                        <h3>Tipos de memória</h3>
+                        <p class="descricao-categoria">Formas diferentes de guardar e acessar informações.</p>
+                        <div class="cards-estudo">
+                            <article class="card-estudo"><h4>RAM</h4><p>Guarda temporariamente dados e programas em uso; normalmente perde o conteúdo quando falta energia.</p></article>
+                            <article class="card-estudo"><h4>ROM</h4><p>Tipo de memória não volátil usado para guardar instruções ou informações que precisam ser preservadas.</p></article>
+                            <article class="card-estudo"><h4>EEPROM</h4><p>Permite apagar e regravar informações eletricamente, mantendo-as mesmo sem energia.</p></article>
+                            <article class="card-estudo"><h4>FLASH</h4><p>É uma memória não volátil regravável, comum em pen drives, cartões e unidades SSD.</p></article>
+                            <article class="card-estudo"><h4>CACHE</h4><p>É uma memória muito rápida que aproxima do processador dados acessados com frequência.</p></article>
+                            <article class="card-estudo"><h4>MEMÓRIA DE MASSA</h4><p>Armazena grandes quantidades de arquivos e programas, como em HDs e SSDs.</p></article>
+                        </div>
+                    </section>
+
+                    <section class="categoria-estudo">
+                        <h3>Comunicação de dados</h3>
+                        <p class="descricao-categoria">Como as informações circulam entre os componentes.</p>
+                        <div class="cards-estudo">
+                            <article class="card-estudo"><h4>DMA</h4><p>Permite que dispositivos transfiram dados para a memória com pouca intervenção do processador.</p></article>
+                            <article class="card-estudo"><h4>ADDRESS BUS</h4><p>Barramento que transporta o endereço da posição de memória ou do dispositivo a ser acessado.</p></article>
+                            <article class="card-estudo"><h4>DATA BUS</h4><p>Barramento usado para transportar os dados entre o processador, a memória e outros componentes.</p></article>
+                        </div>
+                    </section>
+                </div>
+                <div class="inicio-estudo">
+                    <p><strong>Preparado para praticar?</strong> O caça-palavras vai apresentar dicas sobre os conceitos que você acabou de estudar.</p>
+                    <button type="button" class="botao botao-principal" onclick="iniciarJogo()">Começar caça-palavras</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="jogo" class="jogo" hidden>
             <div class="painel painel-tabuleiro">
                 <div class="painel-cabecalho">
                     <div>
@@ -40,6 +91,7 @@
                 <div class="acoes">
                     <button class="botao botao-principal" type="button" onclick="conferir()">Conferir</button>
                     <button class="botao botao-secundario" type="button" onclick="reiniciar()">Reiniciar</button>
+                    <button class="botao botao-secundario" type="button" onclick="reverComponentes()">Rever componentes</button>
                 </div>
             </div>
 

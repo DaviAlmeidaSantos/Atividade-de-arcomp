@@ -4,13 +4,20 @@ Projeto web desenvolvido com **HTML, CSS e JavaScript puros**, com temas de Arqu
 
 > **Importante:** o enunciado original solicita uma cruzadinha. O caça-palavras é uma adaptação escolhida no projeto e não atende integralmente a esse formato.
 
+## Conheça os componentes
+
+Antes de abrir o tabuleiro, o site mostra uma etapa de estudo com os **16 termos da atividade** organizados por assunto: processamento e controle, tipos de memória e comunicação de dados.
+
+Cada termo possui uma explicação curta. Depois da leitura, o botão **Começar caça-palavras** abre o jogo e apresenta as dicas. Durante a partida, **Rever componentes** permite consultar o material e retornar ao jogo sem perder os acertos. **Reiniciar** começa uma nova rodada.
+
 ## Como jogar
 
-1. Leia as **16 dicas** — uma para cada termo, sem revelar o nome.
-2. Descubra a palavra e procure-a no tabuleiro.
-3. Clique e arraste, ou deslize o dedo, da primeira à última letra, em linha reta horizontal ou vertical.
-4. Cada acerto revela a resposta na lista e marca suas casas com **cor e estilo de borda próprios**.
-5. O botão **Conferir** exibe a pontuação; **Reiniciar** sorteia novamente as posições, as letras e as dicas.
+1. Leia a seção **Conheça os componentes**, depois clique em **Começar caça-palavras**.
+2. Leia as **16 dicas** — uma para cada termo, sem revelar o nome.
+3. Descubra a palavra e procure-a no tabuleiro.
+4. Clique e arraste, ou deslize o dedo, da primeira à última letra, em linha reta horizontal ou vertical.
+5. Cada acerto revela a resposta na lista e marca suas casas com **cor e estilo de borda próprios**.
+6. O botão **Conferir** exibe a pontuação; **Reiniciar** sorteia novamente as posições, as letras e as dicas.
 
 As palavras podem ser selecionadas em ambos os sentidos. Nos pontos onde palavras se cruzam, as casas combinam suas cores. A mesma palavra não soma pontos duas vezes.
 
