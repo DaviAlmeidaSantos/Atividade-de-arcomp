@@ -11,7 +11,7 @@ body {
 
 .container {
     width: 92%;
-    max-width: 1120px;
+    max-width: 1240px;
     margin: auto;
 }
 
@@ -87,7 +87,7 @@ h1 span {
 
 .jogo {
     display: grid;
-    grid-template-columns: minmax(0, 1.5fr) minmax(280px, 1fr);
+    grid-template-columns: minmax(0, 1.45fr) minmax(320px, 1fr);
     gap: 20px;
     align-items: start;
 }
@@ -135,10 +135,10 @@ h2 {
 
 .tabuleiro {
     display: grid;
-    grid-template-columns: repeat(13, minmax(0, 1fr));
+    grid-template-columns: repeat(16, minmax(0, 1fr));
     gap: 3px;
     width: 100%;
-    max-width: 520px;
+    max-width: 640px;
     user-select: none;
 }
 
@@ -152,9 +152,10 @@ h2 {
     align-items: center;
     justify-content: center;
     font-weight: bold;
-    font-size: clamp(10px, 1.5vw, 16px);
+    font-size: clamp(9px, 1.1vw, 15px);
     cursor: crosshair;
     user-select: none;
+    touch-action: none;
 }
 
 .celula.selecionada {
@@ -164,15 +165,12 @@ h2 {
 }
 
 .celula.encontrada {
-    background: #b5ead0;
-    border-color: #6ec6a0;
-    color: #176747;
+    color: #16263b;
 }
 
-.celula.encontrada.selecionada {
-    background: #78b7ed;
-    border-color: #287fbe;
-    color: #102b42;
+.celula.selecionada {
+    outline: 2px solid #247fbe;
+    outline-offset: -2px;
 }
 
 .mensagem {
@@ -298,7 +296,7 @@ h2 {
 
 .texto-dica {
     flex: 1;
-    min-width: 155px;
+    min-width: 150px;
 }
 
 .resposta-dica {
@@ -312,8 +310,21 @@ h2 {
 }
 
 .palavra.encontrada {
-    background: #e5f8ed;
-    border-color: #a8dfc2;
+    border-left-width: 5px;
+}
+
+.marcador-dica {
+    display: none;
+    width: 12px;
+    height: 12px;
+    border: 3px solid transparent;
+    border-radius: 3px;
+    flex-shrink: 0;
+    align-self: center;
+}
+
+.palavra.encontrada .marcador-dica {
+    display: inline-block;
 }
 
 .palavra.encontrada .resposta-dica {
@@ -402,7 +413,7 @@ h2 {
     }
 
     .celula {
-        border-radius: 3px;
-        font-size: 10px;
+        border-radius: 2px;
+        font-size: clamp(8px, 2.5vw, 11px);
     }
 }

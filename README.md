@@ -1,70 +1,57 @@
 # ArqComp — Caça-Palavras Computacional
 
-Jogo de caça-palavras sobre conceitos de **Arquitetura Computacional**, desenvolvido com **HTML, CSS e JavaScript puros** para a Sprint 3.
+Projeto web desenvolvido com **HTML, CSS e JavaScript puros**, com temas de Arquitetura Computacional.
 
-> **Observação:** o enunciado original da atividade solicita uma *cruzadinha*, com pistas e palavras digitadas nas casas. Esta implementação é um **caça-palavras**, conforme a escolha de desenvolvimento, e não atende integralmente ao formato solicitado no PDF.
+> **Importante:** o enunciado original solicita uma cruzadinha. O caça-palavras é uma adaptação escolhida no projeto e não atende integralmente a esse formato.
 
 ## Como jogar
 
-1. Leia as 12 dicas e descubra quais termos devem ser encontrados.
-2. Segure o botão esquerdo do mouse sobre a primeira letra de uma palavra.
-3. Arraste na horizontal ou vertical, até a última letra, e solte o mouse.
-4. Quando acertar, as casas ficam verdes, a resposta é revelada ao lado da dica e o contador aumenta.
-5. Use **Conferir** para consultar seu progresso ou **Reiniciar** para começar com as palavras em **novas posições**.
+1. Leia as **16 dicas** — uma para cada termo, sem revelar o nome.
+2. Descubra a palavra e procure-a no tabuleiro.
+3. Clique e arraste, ou deslize o dedo, da primeira à última letra, em linha reta horizontal ou vertical.
+4. Cada acerto revela a resposta na lista e marca suas casas com **cor e estilo de borda próprios**.
+5. O botão **Conferir** exibe a pontuação; **Reiniciar** sorteia novamente as posições, as letras e as dicas.
 
-É possível selecionar as palavras em qualquer um dos dois sentidos (da esquerda para a direita ou vice-versa; de cima para baixo ou vice-versa). Palavras já encontradas não somam novos acertos.
+As palavras podem ser selecionadas em ambos os sentidos. Nos pontos onde palavras se cruzam, as casas combinam suas cores. A mesma palavra não soma pontos duas vezes.
 
-## Palavras do desafio e dicas
+## Todos os termos
 
-| Resposta | Dica exibida no jogo |
-|---|---|
-| CPU | Componente principal responsável por interpretar e executar instruções do computador. |
-| ULA | Parte do processador que realiza cálculos matemáticos e comparações lógicas. |
-| UC | Coordena a execução das instruções e envia sinais aos outros componentes do processador. |
-| RAM | Mantém informações usadas em tarefas atuais, mas perde tudo quando falta energia. |
-| ROM | Guarda instruções essenciais à inicialização e normalmente funciona apenas para leitura. |
-| EEPROM | Permite apagar e regravar dados eletricamente, sem retirar o componente do circuito. |
-| FLASH | Tecnologia de memória presente em pen drives e unidades SSD. |
-| CACHE | Guarda cópias de dados frequentemente acessados para acelerar o processamento. |
-| DMA | Permite transferir informações entre periféricos e memória com pouca intervenção do processador. |
-| DATABUS | Caminho eletrônico por onde circulam informações entre componentes do computador. |
-| DUALCORE | Processador que possui dois núcleos de execução. |
-| QUADCORE | Processador que possui quatro núcleos de execução. |
+- CPU
+- ULA
+- UC
+- REGISTRADORES
+- RAM
+- ROM
+- EEPROM
+- FLASH
+- CACHE
+- MEMORIADEMASSA (memória de massa)
+- DMA
+- ADDRESSBUS (barramento de endereços)
+- DATABUS (barramento de dados)
+- MICROCONTROLADOR
+- DUALCORE
+- QUADCORE
 
-## Tecnologias utilizadas
+Cada termo tem **3 dicas alternativas**, com uma escolhida aleatoriamente a cada partida. A ordem das dicas também é sorteada.
 
-- **HTML:** elementos do site, botões e áreas do tabuleiro.
-- **CSS:** cores, disposição das casas e estilos das respostas.
-- **JavaScript:** vetores, objetos, `for`, `if/else`, funções e eventos do mouse.
+## Tabuleiro
 
-O tabuleiro tem **13 linhas e 13 colunas** e é **sorteado novamente a cada partida**. As 12 palavras são posicionadas aleatoriamente na horizontal ou vertical, sem conflito de letras; os espaços restantes recebem letras aleatórias. O jogo utiliza apenas arrays, objetos, laços `for`, condicionais e `Math.random()`, sem bibliotecas externas.
+A grade agora tem **16 linhas × 16 colunas**. Embora fosse desejado aumentar a antiga grade de 13 × 13 em apenas uma casa por lado, o termo **MICROCONTROLADOR tem 16 letras**: não caberia inteiro na horizontal ou vertical em 14 × 14. Por isso foi utilizado o tamanho mínimo necessário para acomodar todos os termos sem abreviações.
+
+As palavras são posicionadas aleatoriamente na horizontal ou vertical, com a possibilidade de cruzamentos compatíveis. Ao reiniciar, cada termo recebe uma posição e direção diferentes da partida anterior. As casas vazias recebem letras aleatórias.
 
 ## Arquivos
 
-```text
-Atividade-de-arcomp/
-├── index.html    # Estrutura da página
-├── style.css     # Visual do jogo
-├── script.js     # Tabuleiro e regras
-└── README.md     # Documentação
-```
+- `index.html` — estrutura da página e os botões.
+- `style.css` — layout responsivo e destaque visual das palavras.
+- `script.js` — geração do tabuleiro, dicas sorteadas, arraste, conferência e reinício.
+- `README.md` — documentação do projeto.
 
 ## Como executar
 
-Abra o arquivo `index.html` em um navegador no computador. Nenhuma instalação é necessária.
+Abra `index.html` no navegador. O jogo não exige instalação, framework ou banco de dados.
 
-## Situação do projeto
+## Publicação
 
-- [x] Definir as 12 palavras e suas posições.
-- [x] Criar o layout HTML.
-- [x] Aplicar o estilo CSS.
-- [x] Programar a seleção com o mouse, a conferência e o reinício.
-- [x] Substituir a lista de respostas por dicas e revelar cada termo após o acerto.
-- [x] Gerar novas posições e letras para o tabuleiro ao reiniciar.
-- [ ] Publicar no GitHub Pages e testar o endereço público.
-
-A atividade original solicita **no mínimo 6 commits em pelo menos 2 dias diferentes**. O histórico do repositório deve ser acompanhado para cumprir essa regra.
-
-## Site publicado
-
-Ainda não publicado. Após ativar o GitHub Pages, o link poderá ser adicionado aqui.
+O site pode ser publicado gratuitamente pelo GitHub Pages, selecionando a branch `main` e a pasta `/ (root)` em **Settings → Pages**.
